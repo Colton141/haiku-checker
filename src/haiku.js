@@ -16,17 +16,33 @@ export function insertionSort(ToSort)
   return ToSort;
 }
 
-export function checkPrefix(){
-
+export function checkPrefix(word){
+  let lineOne = word.split(' ');
+  for (let i = 0; i < lineOne.length; i++){
+    let wordChars = lineOne[i].split('');
+    for (let j = 0; j < prefixArray.length - 1; j++){
+      if (lineOne[i].startsWith(prefixArray[j])){
+        word = wordChars.slice(0,(prefixArray[j].length));
+        syllables ++;
+      }
+    }
+  }
+  return word;
 }
 
 export function checkSuffix(){
 
 }
 
-export function checkConsonants() {
+export function checkConsonants(array) {
 let consonantArray = ["q", "w", "r", "t", "p", "s", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
 let specialCase = ["th", "sh", "ph", "ch", "wh"];
+
+  for(let i = 0; i < array.length; i++){
+    if(array[i] == array[i-1]) {
+      Syllables +=1;
+    }
+  }
 
 }
 
